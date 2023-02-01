@@ -12,6 +12,17 @@ An extension module for `click <https://github.com/mitsuhiko/click>`_ to registe
 external CLI commands via setuptools entry-points.
 
 
+What this fork does
+----
+
+This fork simply adds the two hanging pull requests of `click-plugins <https://github.com/click-contrib/click-plugins>`_ to the project.
+
+Those two pull requests are:
+
+- `PR #33: Allow |with_plugins()| to accept a string <https://github.com/click-contrib/click-plugins/pull/33>`_
+- `PR #32: Add a new plugin to support custom color output <https://github.com/click-contrib/click-plugins/pull/32>`_
+
+
 Why?
 ----
 
