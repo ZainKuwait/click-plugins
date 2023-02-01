@@ -22,6 +22,35 @@ Those two pull requests are:
 - `PR #33: Allow \`with_plugins()\` to accept a string <https://github.com/click-contrib/click-plugins/pull/33>`_
 - `PR #32: Use entrypoint resolve to not check all the dependencies in the env <https://github.com/click-contrib/click-plugins/pull/32>`_
 
+How to install this fork
+----
+
+Use this:
+
+.. code-block:: bash
+
+    pip install git+https://github.com/ZainKuwait/click-plugins.git#egg=click-plugins
+
+To add it to a ``setup.py`` file, add the following:
+
+.. code-block:: python
+
+    from setuptools import find_packages, setup
+
+    setup(
+        # ...
+        install_requires=[
+            "click-plugins @ git+https://github.com/ZainKuwait/click-plugins.git@master#egg=click-plugins"
+        ],
+        # ...
+    )
+
+For a ``requirements.txt`` file, just add this to the list (no version specification required):
+
+.. code-block:: text
+
+    git+https://github.com/ZainKuwait/click-plugins.git@master#egg=click-plugins
+
 
 Why?
 ----
