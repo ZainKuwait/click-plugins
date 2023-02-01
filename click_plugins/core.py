@@ -3,16 +3,15 @@ Core components for click_plugins
 """
 
 
-import click
-
 import os
 import sys
 import traceback
+
+import click
 from pkg_resources import iter_entry_points
 
 
 def with_plugins(plugins):
-
     """
     A decorator to register external CLI commands to an instance of
     `click.Group()`.
@@ -32,7 +31,8 @@ def with_plugins(plugins):
 
     def decorator(group):
         if not isinstance(group, click.Group):
-            raise TypeError("Plugins can only be attached to an instance of click.Group()")
+            raise TypeError(
+                "Plugins can only be attached to an instance of click.Group()")
 
         entry_points = plugins
         if type(plugins) is str:
@@ -40,7 +40,7 @@ def with_plugins(plugins):
 
         for entry_point in entry_points or ():
             try:
-                group.add_command(entry_point.load())
+                group.add_command(entry_point.resolve())
             except Exception:
                 # Catch this so a busted plugin doesn't take down the CLI.
                 # Handled by registering a dummy command that does nothing
@@ -63,7 +63,6 @@ class BrokenCommand(click.Command):
     """
 
     def __init__(self, name):
-
         """
         Define the special help messages after instantiating a `click.Command()`.
         """
@@ -86,7 +85,6 @@ class BrokenCommand(click.Command):
             % (util_name, self.name))
 
     def invoke(self, ctx):
-
         """
         Print the traceback instead of doing nothing.
         """
