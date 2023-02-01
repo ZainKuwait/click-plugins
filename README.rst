@@ -19,7 +19,7 @@ This fork simply adds the two hanging pull requests of `click-plugins <https://g
 
 Those two pull requests are:
 
-- `PR #33: Allow |with_plugins()| to accept a string <https://github.com/click-contrib/click-plugins/pull/33>`_
+- `PR #33: Allow \`with_plugins()\` to accept a string <https://github.com/click-contrib/click-plugins/pull/33>`_
 - `PR #32: Add a new plugin to support custom color output <https://github.com/click-contrib/click-plugins/pull/32>`_
 
 
